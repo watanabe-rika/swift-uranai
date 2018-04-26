@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xma-9z-ea8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,102 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="seimei_shindan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="今日のお昼ご飯を入力してね" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TvN-0E-qZ7">
+                                <rect key="frame" x="50" y="318.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1b-Jo-kad">
+                                <rect key="frame" x="120" y="378.5" width="135" height="30"/>
+                                <state key="normal" title="今日の退勤時刻は…"/>
+                                <connections>
+                                    <segue destination="F4o-X4-eyb" kind="show" identifier="showResult" id="ne1-qT-e7S"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TvN-0E-qZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="FOh-KW-mRF"/>
+                            <constraint firstItem="TvN-0E-qZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V08-ig-pBE"/>
+                            <constraint firstItem="P1b-Jo-kad" firstAttribute="top" secondItem="TvN-0E-qZ7" secondAttribute="bottom" constant="30" id="W0x-iZ-cwB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TvN-0E-qZ7" secondAttribute="trailing" constant="50" id="e9y-Ne-Sf8"/>
+                            <constraint firstItem="P1b-Jo-kad" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihE-Xp-F7D"/>
+                            <constraint firstItem="TvN-0E-qZ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kUm-fo-Q6H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dCA-0P-IXI"/>
+                    <connections>
+                        <outlet property="gohanText" destination="TvN-0E-qZ7" id="8dI-Hl-VOd"/>
+                        <outlet property="sendButton" destination="P1b-Jo-kad" id="02D-E8-b74"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--占い結果-->
+        <scene sceneID="cxd-Hf-3Ab">
+            <objects>
+                <viewController id="F4o-X4-eyb" customClass="ResultViewController" customModule="seimei_shindan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mxd-Eh-k9a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBt-N1-EhG">
+                                <rect key="frame" x="107" y="295" width="161" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の退勤時刻は…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyZ-ck-ssa">
+                                <rect key="frame" x="111" y="244" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lBt-N1-EhG" firstAttribute="centerY" secondItem="Mxd-Eh-k9a" secondAttribute="centerY" id="C8F-XD-uzh"/>
+                            <constraint firstItem="lBt-N1-EhG" firstAttribute="centerX" secondItem="Mxd-Eh-k9a" secondAttribute="centerX" id="M5v-Gs-6nN"/>
+                            <constraint firstItem="lBt-N1-EhG" firstAttribute="top" secondItem="HyZ-ck-ssa" secondAttribute="bottom" constant="30" id="fIm-9s-q1c"/>
+                            <constraint firstItem="HyZ-ck-ssa" firstAttribute="centerX" secondItem="Mxd-Eh-k9a" secondAttribute="centerX" id="loe-pH-2dM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9n2-gu-H8S"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="占い結果" id="EOl-mM-Mut"/>
+                    <connections>
+                        <outlet property="myResult" destination="lBt-N1-EhG" id="bH5-jK-yPQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4JZ-Li-BfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uAe-9s-xVG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xma-9z-ea8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A9V-nt-vVd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ssr-uN-hRK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVn-YN-x4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.79999999999995" y="791.15442278860576"/>
         </scene>
     </scenes>
 </document>

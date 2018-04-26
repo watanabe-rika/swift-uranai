@@ -14,6 +14,7 @@
 		472A8821208EE93900266AC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472A881F208EE93900266AC6 /* LaunchScreen.storyboard */; };
 		472A882C208EE93900266AC6 /* seimei_shindanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A882B208EE93900266AC6 /* seimei_shindanTests.swift */; };
 		472A8837208EE93900266AC6 /* seimei_shindanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A8836208EE93900266AC6 /* seimei_shindanUITests.swift */; };
+		472A8845208EED1900266AC6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A8844208EED1900266AC6 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		472A8832208EE93900266AC6 /* seimei-shindanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "seimei-shindanUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		472A8836208EE93900266AC6 /* seimei_shindanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seimei_shindanUITests.swift; sourceTree = "<group>"; };
 		472A8838208EE93900266AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		472A8844208EED1900266AC6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				472A8816208EE93700266AC6 /* AppDelegate.swift */,
 				472A8818208EE93700266AC6 /* ViewController.swift */,
+				472A8844208EED1900266AC6 /* ResultViewController.swift */,
 				472A881A208EE93700266AC6 /* Main.storyboard */,
 				472A881D208EE93900266AC6 /* Assets.xcassets */,
 				472A881F208EE93900266AC6 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				472A8819208EE93700266AC6 /* ViewController.swift in Sources */,
 				472A8817208EE93700266AC6 /* AppDelegate.swift in Sources */,
+				472A8845208EED1900266AC6 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
